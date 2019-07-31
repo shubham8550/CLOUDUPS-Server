@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2019 at 05:09 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Generation Time: Jul 31, 2019 at 07:52 PM
+-- Server version: 10.3.15-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `cloudeups`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `uploads`
+--
+
+CREATE TABLE `uploads` (
+  `id` int(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `filename` varchar(500) NOT NULL,
+  `ext` varchar(100) NOT NULL,
+  `filesize` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `uploads`
+--
+
+INSERT INTO `uploads` (`id`, `username`, `filename`, `ext`, `filesize`) VALUES
+(3, 'asd', 'anime List.txt', 'txt', '41'),
+(6, 'asd', 'sign.JPG', 'JPG', '57835');
 
 -- --------------------------------------------------------
 
@@ -48,11 +70,18 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
 (10, 'test5', '1234', 'test'),
 (11, 'admin', 'admin', 'admin@admin'),
 (12, 'asd', 'asd', 'sdfs'),
-(14, 'sdfdsf', 'dfgfd', 'sdfsf');
+(14, 'sdfdsf', 'dfgfd', 'sdfsf'),
+(15, 'jj', 'jj', 'jj');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `uploads`
+--
+ALTER TABLE `uploads`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -66,10 +95,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `uploads`
+--
+ALTER TABLE `uploads`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
