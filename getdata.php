@@ -19,6 +19,8 @@ if ($result->num_rows > 0) {
    }
    echo json_encode($imgdata,JSON_FORCE_OBJECT);
 
-   }
+   }else{
+    echo json_encode(array(array('id'=> "" , 'filename'=> "", 'ext'=> "", 'filesize'=> "" )),JSON_FORCE_OBJECT );
+}
 
 ?>
